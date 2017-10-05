@@ -1,0 +1,1 @@
+An introduction to dynamic programming. Largest increasing subsequence. (n^2 not nlogn) 
