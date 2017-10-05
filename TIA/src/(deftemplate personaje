@@ -1,0 +1,49 @@
+(deftemplate personaje
+	(slot nombre_Personaje)
+	(slot tipo)
+	(multislot stats)
+	(multislot damage_Type)
+	(multislot range)
+	(multislot role)
+	(slot movilidad)
+
+)
+
+(deffacts ejemplo
+	(personaje(nombre_Personaje Boromir))
+	(personaje(nombre_Personaje Legolas))
+	(personaje(nombre_Personaje Gandalf))
+)
+
+(defrule movilidad
+	?f <- (personaje(role ?role movilidad alta))
+	=>
+	(modify ?f((role ?role warrior rogue archer)))
+
+)
+
+(defrule magoStat
+	?f <- (personaje((role mage) (stat ?stat) (damage_Type ?damage) ))
+	=>
+	(modify ?f((stat ?stat int) (range long) (damage_Type ?damage elemental)))
+)
+
+(defrule rogueStat
+	?f <- (personaje(role rogue stat ?stat ))
+	=>
+	(modify ?f((stat ?stat finesse wit)))
+)
+
+(defrule tankStat
+	?f <- (personaje(role tank stat ?stat ))
+	=>
+	(modify ?f((stat ?stat con)))
+
+)
+
+(defrule bufferStat
+	?f <- (personaje((role buffer) (stat ?stat) (role ?role) ))
+	=>
+	(modify ?f((stat ?stat int)(role ?role mage)))
+
+)

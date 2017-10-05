@@ -1,0 +1,24 @@
+(deftemplate universidad
+	(slot codigo)
+	(slot nombre(type STRING))
+	(multislot centros (type object))
+	(multislot dptos)
+	(multislot profesores)
+	(multislot alumnos)
+	(multislot titulaciones (type object))
+) 
+
+(deftemplate CENTRO
+	(slot codigo)
+	(slot nombre(type STRING))
+	(slot pertenece-a)
+	(multislot titulaciones)
+	(multislot profesores)
+
+)
+
+(deftemplate TITULACION
+	(slot codigo)
+	(slot nombre(type STRING))
+	(slot centro)
+)

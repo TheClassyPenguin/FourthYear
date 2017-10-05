@@ -1,0 +1,16 @@
+Type			 stats			damage Type					/range/		role
+Aerotheurge			int			magic,elemental  			long		mage
+Geomancer			int, con	physical, elemental			medium		mage, tank
+Hunstman			finesse,wit	physical					long		archer	
+Hydrosophist		int			magic, elemental			long		healer, mage
+Necromancer			int,wit		fisical, bleed, disease 	medium		summoner, mage
+Polymorph			wit			physical					medium		mage, crowd control, buffer
+Pyrokinetic			int			magic, elemental 			long		mage, buffer
+Scoundrel			finesse,wit	physical	    			short		rogue, crowd control
+Summoning			int,con 	magic, elemental 			medium		summoner, buffer, mage
+Warfare				str,con 	physical					short		warrior, tank
+
+stats:				 int/finesse/wit/str/con
+damage type:		 magic/elemental/physical/bleed/disease
+range:				 short/medium/long
+role:				 mage/tank/archer/healer/summoner/crowd control/buffer/warrior/tank/rogue
