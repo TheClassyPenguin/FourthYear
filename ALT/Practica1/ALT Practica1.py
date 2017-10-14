@@ -1,6 +1,6 @@
 import sys
 
-def subCrecienteLarga2(seq):
+def ejercicio2(seq):
     numberOfSequences = len(seq)
     results = [1]*numberOfSequences
     for i in range(numberOfSequences):
@@ -10,7 +10,17 @@ def subCrecienteLarga2(seq):
                 results[i]=results[j]+1
     return results
 
-def subCrecienteLarga4(seq):
+def ejercicio3(seq):
+    numberOfSequences = len(seq)
+    results = [1]*numberOfSequences
+    for i in range(numberOfSequences):
+        subSeq = seq[:i+1]
+        for j in range(len(subSeq)-1):
+            if (subSeq[j] < subSeq[i] and results[i] <= results[j]):
+                results[i]=results[j]+1
+    return max(results)
+
+def ejercicio4(seq):
     numberOfSequences = len(seq)
     results = [1]*numberOfSequences
     backTracking = {}
@@ -34,7 +44,7 @@ def subCrecienteLarga4(seq):
     answer.reverse()
     return answer
 
-
-
-print(subCrecienteLarga4([210,816,357,107,889,635,733,930,842,542]))
+print(ejercicio2([210,816,357,107,889,635,733,930,842,542]))
+print(ejercicio3([210,816,357,107,889,635,733,930,842,542]))
+print(ejercicio4([210,816,357,107,889,635,733,930,842,542]))
 
